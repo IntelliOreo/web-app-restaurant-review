@@ -1,4 +1,4 @@
-import Session from '../models/sessionModel'
+import Session from '../models/sessionModel.js'
 
 export const start = async (req, res) => {
   return res.json(res.locals.curSession)

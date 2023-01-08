@@ -1,4 +1,4 @@
-import Review from '../models/ReviewModel'
+import Review from '../models/ReviewModel.js'
 
 // Add Route to create review
 export const createReview = async (req, res) => {}

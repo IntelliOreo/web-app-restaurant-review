@@ -1,4 +1,4 @@
-import Session from '../models/sessionModel'
+import Session from '../models/sessionModel.js'
 
 const sessionController = {}
 

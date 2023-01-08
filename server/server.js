@@ -1,7 +1,6 @@
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
-import connectDb from './data/connectDb.js'
 import mongoose from 'mongoose'
 import userRoutes from './routes/UserRoutes.js'
 import reviewRoutes from './routes/ReviewRoutes.js'
@@ -13,9 +12,6 @@ dotenv.config()
 // Instantiate Express App
 const app = express()
 const PORT = process.env.PORT
-
-// Connect to database
-connectDb()
 
 // Middlewares
 app.use(express.json())
@@ -42,8 +38,19 @@ app.use((err, req, res, next) => {
 })
 
 // Listen only if db is connected
-mongoose.connection.once('open', () => {
-  app.listen(PORT, () => {
-    console.log(`Server listening on port: ${PORT}`)
+mongoose.set('strictQuery', false)
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
   })
-})
+  .then(() => {
+    console.log('Connected to Mongo Database')
+    app.listen(PORT, () => {
+      console.log(`Server listening on port: ${PORT}`)
+    })
+  })
+  .catch((e) => {
+    console.log('Unable to connect to database')
+    console.error('Mongo ERROR:', e)
+  })
