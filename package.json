@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "NODE_ENV=production node server/server.js",
     "dev": "concurrently \" webpack-dev-server --open\" \"nodemon ./server/server.js\""
