@@ -1,4 +1,6 @@
 import User from '../models/UserModel'
+import jwt from 'jsonwebtoken'
+import bcrypt from 'bcrypt'
 
 /**
  * @description Sign Up user
