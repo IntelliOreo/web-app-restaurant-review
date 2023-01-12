@@ -1,4 +1,5 @@
-import React, { useRef } from "react"
+import React, { useRef } from "react";
+import logo from "public/images/web-app-logo.png";
 
 const SignIn = () => {
   const username = useRef(null);
@@ -12,7 +13,7 @@ const SignIn = () => {
   
   return (
   <div className="sidebar-container">
-    <img className="logo" src="public/images/web-app-logo.png" alt="placeholder logo"/>
+    <img className="logo" src={ logo } alt="placeholder logo"/>
     <h2 className="app-name">Reviews.io</h2>
     <section className="sidebar-form">
       <button className="btn">
