@@ -1,4 +1,6 @@
 import React, { useRef } from "react"
+import sideImage from "../../public/images/sign-up-page2.jpg";
+
 
 const SignUp = () => {
   const fullName  = useRef(null);
@@ -18,7 +20,7 @@ const SignUp = () => {
 
   return (
   <><div className="sidebar-container">
-      <img className="logo" src="public/images/web-app-logo.png" alt="placeholder logo" />
+      <img className="logo" src={sideImage} alt="placeholder logo" />
       <h3 className="app-name">Create an account to get started!</h3>
       <div className="sidebar-form form-control">
         <form action="" id="sign-up-form">

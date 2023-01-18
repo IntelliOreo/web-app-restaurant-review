@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import logo from "public/images/web-app-logo.png";
+import logo from "../../public/images/web-app-logo.png";
 
 const SignIn = () => {
   const username = useRef(null);
