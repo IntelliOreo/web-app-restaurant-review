@@ -1,36 +1,43 @@
 import React, { Component, useState } from 'react';
-import styles from './style.css';
 
-// Testing solutions for multi-page App
-import { 
-  BrowserRouter as Router, 
-  Routes, 
-  Route 
-} from 'react-router-dom';
-
+import ReactDOM from 'react-dom';
 import SignIn from './pages/signIn';
 import SignUp from './pages/signUp';
+import styles from './style.css';
 
-//  End of testing block
+import { 
+  createBrowserRouter,
+  RouterProvider, 
+  
+} from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SignIn />,
+    loader: signInLoader,
+    children: [
+      {
+        path: "SignUp",
+        element: <SignUp />,
+        loader: signUpLoader,
+        
+      },
+    ],
+  },
+]);
 
 function App() {
-    return(
-      <>
-        <Router>
-          <Switch>
-            <Route className="main" exact path="/" component={SignIn} />
+    return (
+      <div className="main">
+        <SignIn />
 
-            <Route className="signUp" exact path="SignUp" component={SignUp}/>
-          
-            <Redirect to="/" />
-          </Switch>
+      </div>
+    )    
+};
 
-        </Router>
-      </>
-      
-    );
-
-
-}
+ReactDOM.createRoot(document.getElementById("root")).redner(
+  <RouterProvider router={router} />
+);
 
 export default App;

@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import sideImage from "../../public/images/sign-up-page2.jpg";
 
 
-const SignUp = () => {
+export function SignUp() {
   const fullName  = useRef(null);
   const email     = useRef(null);
   const username  = useRef(null);
