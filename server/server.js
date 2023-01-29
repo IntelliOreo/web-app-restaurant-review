@@ -11,7 +11,7 @@ dotenv.config()
 
 // Instantiate Express App
 const app = express()
-const PORT = process.env.PORT
+const PORT = 8080
 
 // Middlewares
 app.use(express.json())
@@ -23,6 +23,12 @@ app.use(cookieParser())
 app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 app.use('/api/session', sessionRoutes)
+
+app.post("/api/test",function(req,res){
+  res.send("here")
+})
+
+
 
 // Not Found
 app.use('*', (req, res) => {
@@ -38,19 +44,32 @@ app.use((err, req, res, next) => {
 })
 
 // Listen only if db is connected
-mongoose.set('strictQuery', false)
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
+// mongoose.set('strictQuery', false)
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true
+//   })
+//   .then(() => {
+//     console.log('Connected to Mongo Database')
+//     app.listen(PORT, () => {
+//       console.log(`Server listening on port: ${PORT}`)
+//     })
+//   })
+//   .catch((e) => {
+//     console.log('Unable to connect to database')
+//     console.error('Mongo ERROR:', e)
+//   })
+
+
+
+
+  //my code
+
+  app.listen(PORT, ()=>{
+    console.log("server runing")
   })
-  .then(() => {
-    console.log('Connected to Mongo Database')
-    app.listen(PORT, () => {
-      console.log(`Server listening on port: ${PORT}`)
-    })
-  })
-  .catch((e) => {
-    console.log('Unable to connect to database')
-    console.error('Mongo ERROR:', e)
-  })
+  
+  
+  // const NotesRouter = require("./routes/NotesRouter");
+  // app.use("/CreateNew", NotesRouter);
