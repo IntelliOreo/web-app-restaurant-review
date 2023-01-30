@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import sideImage from "../../public/images/sign-up-page2.jpg";
-
+import { Link, Outlet } from 'react-router-dom'
 
 export function SignUp() {
   const fullName  = useRef(null);
@@ -35,9 +35,10 @@ export function SignUp() {
           <label for="password">Confirm Password</label>
           <input ref={confirmPW} type="text" id="confirmPW-field" placeholder="Confirm your password" />
           <input onClick={ e => handleClick(e) } type="submit" value="Create Your Account" className="btn" id="sign-up-form-submit" />
-          <small>
-            Already have an account?<a href="sign-in.html">Signin</a>
+          <Outlet><small>
+            Already have an account?<Link to="/home">Signin</Link>
           </small>
+          </Outlet>
         </form>
       </div>
     </div>

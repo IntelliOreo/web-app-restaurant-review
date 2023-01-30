@@ -1,43 +1,21 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 
-import ReactDOM from 'react-dom';
-import SignIn from './pages/signIn';
-import SignUp from './pages/signUp';
 import styles from './style.css';
 
-import { 
-  createBrowserRouter,
-  RouterProvider, 
-  
-} from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
+import SignIn from './pages/signIn';
+import SignUp from './pages/signUp';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <SignIn />,
-    loader: signInLoader,
-    children: [
-      {
-        path: "SignUp",
-        element: <SignUp />,
-        loader: signUpLoader,
-        
-      },
-    ],
-  },
-]);
 
-function App() {
+export default function App() {
     return (
-      <div className="main">
-        <SignIn />
-
-      </div>
+      
+      
+      <Routes>
+        <Route path='/' element={<SignIn />} />
+        <Route path='/signUp' element={<SignUp />} />
+      </Routes>
+    
     )    
 };
 
-ReactDOM.createRoot(document.getElementById("root")).redner(
-  <RouterProvider router={router} />
-);
-
-export default App;

@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import logo from "../../public/images/web-app-logo.png";
+import { Link, Outlet } from 'react-router-dom'
+
 // import { Link } from 'react-router-dom';
 
 const SignIn = () => {
@@ -35,7 +37,7 @@ const SignIn = () => {
           </div>  
           <input onClick={ e => handleClick(e) } type="submit" value="Login" className="btn" id="login-form-submit"/>
           <small>
-            Don't have an account? <a href="./pages/signUp">Sign up</ a>
+            Don't have an account? <Link to="SignUp">Sign up</Link>
           </small>          
         </form>
       </div>       
