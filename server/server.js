@@ -46,7 +46,6 @@ mongoose
   })
   .then(() => {
     console.log('Connected to Mongo Database')
-    })
   })
   .catch((e) => {
     console.log('Unable to connect to database')
@@ -54,6 +53,5 @@ mongoose
   })
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}`);
-});
-
+  console.log(`Server listening on port: ${PORT}`)
+})
