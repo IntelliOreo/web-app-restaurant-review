@@ -1,40 +1,37 @@
-.background-notes{
-    background-image: url(
-        https://raw.githubusercontent.com/IntelliOreo/web-app-restaurant-review/sign-in/yasu/public/images/sign-in-page.jpeg
-       ); 
-    background-size: repeat center cover;
-    background-size: cover;
-    opacity: 1;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
-    height: 100%;
-    
+.background-notes {
+  background-image: url(https://raw.githubusercontent.com/IntelliOreo/web-app-restaurant-review/sign-in/yasu/public/images/sign-in-page.jpeg);
+  background-size: repeat center cover;
+  background-size: cover;
+  opacity: 1;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  height: 100%;
 }
 
-.body-note{
-    background-color: #e37e35;
-    /* rgb(239, 186, 134); */
-    margin: 5rem;
-    border: 3px solid rgb(10, 36, 10);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    padding: 6%;
-    display: flex;
-    flex-basis: auto;
-    border-radius: 25px;
+.body-note {
+  background-color: #e37e35;
+  /* rgb(239, 186, 134); */
+  margin: 5rem;
+  border: 3px solid rgb(10, 36, 10);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 6%;
+  display: flex;
+  flex-basis: auto;
+  border-radius: 25px;
 }
 
-.body-note:hover{
-background-color: #f9bb36;
-box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-transform: translate3d(0, 2px, 0);
-border-radius: 25px;
+.body-note:hover {
+  background-color: #f9bb36;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+  border-radius: 25px;
 }
 
-.text-style{
-    margin-top: 15%;
+.text-style {
+  margin-top: 15%;
 }
-
 
 .bttn {
   display: flex;
@@ -58,7 +55,7 @@ border-radius: 25px;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
-  padding: .75rem;
+  padding: 0.75rem;
   text-decoration: none;
   transition: all 235ms ease-in-out;
   border-bottom-left-radius: 15px 255px;
@@ -72,14 +69,14 @@ border-radius: 25px;
 }
 
 .bttn:hover {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
 .bttn:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
 .body-note:focus {
-    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-  }
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
