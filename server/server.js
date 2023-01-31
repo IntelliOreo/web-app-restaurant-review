@@ -46,11 +46,14 @@ mongoose
   })
   .then(() => {
     console.log('Connected to Mongo Database')
-    app.listen(PORT, () => {
-      console.log(`Server listening on port: ${PORT}`)
     })
   })
   .catch((e) => {
     console.log('Unable to connect to database')
     console.error('Mongo ERROR:', e)
   })
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
+});
+

@@ -1,0 +1,129 @@
+
+.text-background {
+   background-image: 
+   url(
+    https://raw.githubusercontent.com/IntelliOreo/web-app-restaurant-review/sign-in/yasu/public/images/sign-in-page.jpeg
+   );
+   
+   background-size: "cover";
+   height: 100vh;
+   width: 100vw;
+   background-size: cover;
+   background-repeat:no-repeat; 
+    }
+
+    .text-body{
+      border-radius: 25px;
+      margin-top: 12vh;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: orange;
+      padding: 40px 20px;
+      border-style: solid;
+      border-color: black;
+      border-width: 8px;
+      width: 60%;
+      height: 65%;
+      vertical-align: middle;
+      top: 50%;
+      left: 50%;
+  
+  }
+
+  .textarea {
+   border-radius: 25px;
+   width: 95%;
+   height: 95%; 
+   font-size: 5rem;
+   align-self: center; 
+   padding: 15px 15px;
+   border-style: solid;
+   border-color: black;
+   border-width: 8px;
+   object-position: 50% 20%;
+}
+
+.text-box{
+border-radius: 25px;   
+margin-left: 20px;
+margin-right: 20px;
+background-color: white;
+text-align: start;
+align-self: center; 
+padding: 15px 15px;
+border-style: solid;
+border-color: black;
+border-width: 8px;
+width: 65%;
+height: 65%;
+vertical-align: middle;
+top: 50%;
+left: 50%;
+}
+
+
+.input-title {
+   margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    align-self: center; 
+    padding: 15px 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 8px;
+    font-size:18pt;
+    height:5%;
+    width:50%;
+    top: 10%;
+    object-position: 50% 10%;
+ } 
+
+ #input { 
+   text-align: right; 
+}
+
+.bttn {
+   display: flex;
+   margin-left: 25vh;
+   gap: 1mm;
+   align-self: center;
+   background-color: #ffffff;
+   background-image: none;
+   /* background-position: 0 90%; */
+   background-repeat: repeat no-repeat;
+   background-size: 4px 3px;
+   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+   border-style: solid;
+   border-width: 2px;
+   box-shadow: rgba(15, 15, 15, 0.2) 15px 28px 25px -18px;
+   box-sizing: border-box;
+   color: #0d0d0d;
+   cursor: pointer;
+   display: inline-block;
+   font-family: Neucha, sans-serif;
+   font-size: 1rem;
+   line-height: 23px;
+   outline: none;
+   padding: .75rem;
+   transition: all 235ms ease-in-out;
+   border-bottom-left-radius: 15px 255px;
+   border-bottom-right-radius: 225px 15px;
+   border-top-left-radius: 255px 15px;
+   border-top-right-radius: 15px 225px;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   border-radius: 15px;
+ }
+ 
+ .bttn:hover {
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+   transform: translate3d(0, 2px, 0);
+ }
+ 
+ .bttn:focus {
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+ }
+ 

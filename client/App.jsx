@@ -1,12 +1,11 @@
 import React, { Component, useState } from 'react';
-import ShowNotes from './components/ShowNotes';
-
+import CreateNew from './components/CreateNew'
 
 function App() {
 
     return(
       <div className="main"> 
-      <ShowNotes /> 
+      <CreateNew/>
       </div>
     );
 }
