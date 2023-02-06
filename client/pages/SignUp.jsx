@@ -11,6 +11,14 @@ export function SignUp() {
 
   const handleClick = (e) => {
     e.preventDefault();
+    let errors = false;
+
+    // Client Validation
+
+    // if () {
+      // set email
+    // }
+
     console.log(fullName.current.value);
     console.log(email.current.value);
     console.log(username.current.value);
@@ -25,7 +33,7 @@ export function SignUp() {
       <div className="sidebar-form form-control">
         <form action="" id="sign-up-form">
           <label for="text">Your Name</label>
-          <input ref={fullName} type="name" id="name-field" placeholder="Enter your full name" />
+          <input required ref={fullName} type="name" id="name-field" placeholder="Enter your full name" />
           <label for="email">Email</label>
           <input ref={email} type="email" id="email-field" placeholder="Enter your email" />
           <label for="username">Username</label>
@@ -35,16 +43,14 @@ export function SignUp() {
           <label for="password">Confirm Password</label>
           <input ref={confirmPW} type="text" id="confirmPW-field" placeholder="Confirm your password" />
           <input onClick={ e => handleClick(e) } type="submit" value="Create Your Account" className="btn" id="sign-up-form-submit" />
-          <Outlet><small>
+          <small>
             Already have an account?<Link to="/home">Signin</Link>
           </small>
-          </Outlet>
+          
         </form>
       </div>
     </div>
-    <aside>
-      <img class="main-image" src="public/images/sign-up-page2.jpg" alt="sign up page placeholder" height="800px" />
-    </aside></>
+    </>
   )
 }
 

@@ -1,17 +1,48 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import logo from "../../public/images/web-app-logo.png";
 import { Link, Outlet } from 'react-router-dom'
-
-// import { Link } from 'react-router-dom';
+import {toast} from 'react-toastify'
 
 const SignIn = () => {
   const username = useRef(null);
+  const [usernameError, setUsernameError] = useState('')
   const password = useRef(null);
-  
+  const [passwordError, setPasswordError] = useState('');
+
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(username.current.value);
-    console.log(password.current.value);
+    let errors = false;
+    // Client Validation
+
+    if (username.current.value.trim() === '' || !username.current.value) {
+      setUsernameError('Username cannot be empty')
+      errors = true
+    }
+    
+    if (password.current.value.trim() === '' || !username.current.value) {
+      setPasswordError('Password cannot be empty')
+      errors = true
+    }
+
+    if (errors) return
+    // Send to Backend
+    try {
+      console.log(username.current.value);
+      console.log(password.current.value);
+
+      // Call the API to login user
+
+      toast.success(`Welcome ${username.current.value}`)
+
+    } catch (error) {
+      console.lof(error)
+      toast.error('SERVER ERROR')
+      return
+    }
+
+
+    
+    
   }
   
   return (
@@ -28,8 +59,11 @@ const SignIn = () => {
         <form action="" id="login-form" >
           <label htmlFor="username">Username</label>
           <input ref={ username } type="text" name="username" id="username-field" placeholder="Enter your username"/>
+          <span className="error">{usernameError}</span>
+          <br></br>
           <label htmlFor="password">Password</label>
-          <input ref={ password } type="text" name="password" id="password-field" placeholder="Password"/>
+          <input ref={ password } type="password" name="password" id="password-field" placeholder="Password"/>
+          <span className="error">{passwordError}</span>
           <div className="checkbox-container">
             <input type="checkbox" id="remember"/>
             <label  htmlFor="remember">Remember me</label>
