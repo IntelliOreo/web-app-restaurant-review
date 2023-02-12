@@ -6,13 +6,7 @@ import userRoutes from './routes/UserRoutes.js'
 import reviewRoutes from './routes/ReviewRoutes.js'
 import sessionRoutes from './routes/SessionRoutes.js'
 import NotesRoutes from './routes/NotesRoutes.js'
-import bcrypt from 'bcrypt'
-// import cookieController from './controllers/cookieController.js'
-import verifyJwt from './middlewares/verifyJwt.js'
-//import cors from 'cors'
-//import corsOptions from './config/corsOptions.js'
 
-// import path from 'path'
 
 dotenv.config()
 
@@ -24,26 +18,13 @@ const PORT = 3000
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-//app.use(cors(corsOptions))
+
 
 // Routes
 app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 app.use('/api/session', sessionRoutes)
-app.use('/api/note',verifyJwt, NotesRoutes)
-
-//test
-// app.post(
-//   '/test',
-//   (req, res) => {
-//     return res.json('test')
-//   }
-// )
-
-
-// test^^^
-
-
+app.use('/api/note', NotesRoutes)
 
 
 // Not Found
@@ -59,7 +40,7 @@ app.use((err, req, res, next) => {
   res.status(500).json(errObj)
 })
 
-
+// Database
 mongoose.set('strictQuery', false)
 mongoose
   .connect(process.env.MONGO_URI, {

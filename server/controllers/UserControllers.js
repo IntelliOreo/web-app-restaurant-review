@@ -35,11 +35,10 @@ export const signUp = async (req, res) => {
 /**
  * @description Sing In user
  */
-// export const signIn = async (req, res) => {}
+export const signIn = async (req, res) => {}
 
 /**
  * @description Sign Out user
  */
 export const signOut = async (req, res) => {}
 
-// export const signIn = async (req, res) => {}
