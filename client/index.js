@@ -39,11 +39,6 @@ const router = createBrowserRouter([
     
     ]
   },
-
-  // {
-    // path: "contact",
-    // element: <Contact />
-  // }
 ])
 
 const container = document.getElementById('root');
@@ -52,8 +47,7 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter className='main' >
-      <App />
-      
+      <App />     
     </BrowserRouter>
   </React.StrictMode>  
 );
