@@ -1,7 +1,6 @@
 {
   "name": "solo-project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production node server/server.js",
@@ -30,12 +29,24 @@
     "react-router-dom": "^6.6.2",
     "react-toastify": "^9.1.1",
     "sass-loader": "^13.0.0",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^8.0.0",
+    "sass": "^1.58.0",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IntelliOreo/web-app-restaurant-review.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IntelliOreo/web-app-restaurant-review/issues"
+  },
+  "homepage": "https://github.com/IntelliOreo/web-app-restaurant-review#readme",
+  "description": ""
 }

@@ -1,16 +1,21 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Eudoxus Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  /* font: 15px/1.5 Arial, Helvetica, sans-serif; */
   margin: 0;
   padding: 0;
   color: black;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
+
 
 /* Global Scope */
 
