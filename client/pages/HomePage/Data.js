@@ -1,0 +1,63 @@
+export const homeObjOne = {
+  lightBg: true,
+  primary: true,
+  imgStart: '',
+  lightTopLine: true,
+  lightTextDesc: true,
+  buttonLabel: 'Get Started',
+  description: 'We help restaurang goers share their favorite meals, see where their friends are eating, and build relationships through dining out. Reviews.io brings a modern twist to breaking bread.',
+  headline: 'Every Meal Tells a Story. Share Yours.',
+  lightText: true,
+  topLine: 'Social Media Application',
+  img: require('./../../../public/images/reviews.svg'),
+  alt: '',  
+  start: '',
+}
+
+export const homeObjTwo = {
+  lightBg: true,
+  primary: false,
+  imgStart: 'start',
+  lightTopLine: false,
+  lightTextDesc: false,
+  buttonLabel: 'Get Started',
+  description: 'We help restaurang goers share their favorite meals, see where their friends are eating, and build relationships through dining out. Reviews.io brings a modern twist to breaking bread.',
+  headline: 'Every Meal Tells a Story. Share Yours.',
+  lightText: false,
+  topLine: 'Social Media Application',
+  img: '',
+  alt: '',
+  start: '',
+}
+
+export const homeObjThree = {
+  lightBg: false,
+  primary: true,
+  imgStart: '',
+  lightTopLine: true,
+  lightTextDesc: true,
+  buttonLabel: 'Get Started',
+  description: 'We help restaurang goers share their favorite meals, see where their friends are eating, and build relationships through dining out. Reviews.io brings a modern twist to breaking bread.',
+  headline: 'Every Meal Tells a Story. Share Yours.',
+  lightText: true,
+  topLine: 'Social Media Application',
+  img: '',
+  alt: '',
+  start: '',
+}
+
+export const homeObjFour = {
+  lightBg: true,
+  primary: true,
+  imgStart: '',
+  lightTopLine: true,
+  lightTextDesc: true,
+  buttonLabel: 'Get Started',
+  description: 'We help restaurang goers share their favorite meals, see where their friends are eating, and build relationships through dining out. Reviews.io brings a modern twist to breaking bread.',
+  headline: 'Every Meal Tells a Story. Share Yours.',
+  lightText: true,
+  topLine: 'Social Media Application',
+  img: '',
+  alt: '',
+  start: '',
+}
