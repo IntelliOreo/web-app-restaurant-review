@@ -6,7 +6,7 @@ sessionController.startSession = async (req, res, next) => {
   return next();
 };
 
-sessionController.updateSession = (req, res, next) => {
+sessionController.updateSession = async (req, res, next) => {
   return next();
 };
 

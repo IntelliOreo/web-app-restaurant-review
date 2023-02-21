@@ -1,46 +1,63 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const path = require('path');
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import userRoutes from './routes/UserRoutes.js'
+import reviewRoutes from './routes/ReviewRoutes.js'
+import sessionRoutes from './routes/SessionRoutes.js'
+import NotesRoutes from './routes/NotesRoutes.js'
 
-const cookieController = require('./controllers/cookieController');
-const sessionController = require('./controllers/sessionController');
 
-const app = express();
-const PORT = 3000;
+dotenv.config()
 
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(cookieParser());
+// Instantiate Express App
+const app = express()
+const PORT = 3000
 
-app.get(
-  '/api',
-  cookieController.setCookie,
-  sessionController.startSession,
-  (req, res) => {
-    return res.json(res.locals.curSession);
-  }
-);
+// Middlewares
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
 
-app.post('/api', sessionController.updateSession, (req, res) => {
-  return res.json(res.locals.updateSession);
-});
 
-app.delete('/api', sessionController.clearupSession, (req, res) => {
-  return res.sendStatus(200);
-});
+// Routes
+app.use('/api/user', userRoutes)
+app.use('/api/review', reviewRoutes)
+app.use('/api/session', sessionRoutes)
+app.use('/api/note', NotesRoutes)
 
+
+// Not Found
 app.use('*', (req, res) => {
-  res.status(404).send('Not Found - 404 handler in server.js');
-});
+  res.status(404).send('Not Found - 404 handler in server.js')
+})
 
 app.use((err, req, res, next) => {
-  console.log(err);
-  const defaultErr = { error: 'An error occur' };
-  const errObj = Object.assign({}, defaultErr, err);
-  console.log('errObj in global handler', errObj);
-  res.status(500).json(errObj);
-});
+  console.log(err)
+  const defaultErr = { error: 'An error occur' }
+  const errObj = Object.assign({}, defaultErr, err)
+  console.log('errObj in global handler', errObj)
+  res.status(500).json(errObj)
+})
+
+// Database
+mongoose.set('strictQuery', false)
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  })
+  .then(() => {
+    console.log('Connected to Mongo Database')
+    })
+  .catch((e) => {
+    console.log('Unable to connect to database')
+    console.error('Mongo ERROR:', e)
+  })
+
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
+
+
