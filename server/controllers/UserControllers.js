@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt'
 
 
 export const signUp = async (req, res) => {
-        let { username, password,email  } = req.body
+        let { name, username, password,email  } = req.body
         
          if ( !username || !password || !email ){
            return res.status(400).json({
@@ -19,7 +19,7 @@ export const signUp = async (req, res) => {
        const salt = await bcrypt.genSalt()
        var hash = await bcrypt.hash(password,salt)
        password = hash;
-       const newUser = await User.create({username,password,email})
+       const newUser = await User.create({name,username,password,email})
       return res.status(200).json ({
         note: newUser
       })  

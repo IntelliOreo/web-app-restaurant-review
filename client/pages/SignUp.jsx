@@ -1,6 +1,7 @@
-import React, { useRef } from "react"
+import React, { useState,useRef } from "react"
 import sideImage from "../../public/images/sign-up-page2.jpg";
 import { Link, Outlet } from 'react-router-dom'
+import axios from 'axios';
 
 export function SignUp() {
   const fullName  = useRef(null);
@@ -8,23 +9,52 @@ export function SignUp() {
   const username  = useRef(null);
   const password  = useRef(null);
   const confirmPW = useRef(null);
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    let errors = false;
+  const [newUser, setNewUser] = useState({});
+  const [users, setUsers] = useState([]);
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   let errors = false;
 
     // Client Validation
+
+    const onAddUser = (e) => {
+      e.preventDefault();
+      console.log('here');
+      const newUserTemplete = {
+       name: fullName.current.value,
+       username: username.current.value,
+       email: email.current.value,
+       password: password.current.value,
+       userId: uuid(),
+      };
+      setNewUser( newUserTemplete );
+      setUsers([ newUserTemplete, ...users]);
+      
+
+      const url = 'http://localhost:3000/api/user/signUp'
+      axios.post(
+        url,
+        newUserTemplete,
+        )
+        .then(function(response){
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        }
+      );
+ }
 
     // if () {
       // set email
     // }
 
-    console.log(fullName.current.value);
-    console.log(email.current.value);
-    console.log(username.current.value);
-    console.log(password.current.value);
-    console.log(confirmPW.current.value);
-  }
+  //   console.log(fullName.current.value);
+  //   console.log(email.current.value);
+  //   console.log(username.current.value);
+  //   console.log(password.current.value);
+  //   console.log(confirmPW.current.value);
+  // }
 
   return (
   <><div className="sidebar-container">
@@ -42,7 +72,7 @@ export function SignUp() {
           <input ref={password} type="text" id="password-field" placeholder="Password" />
           <label for="password">Confirm Password</label>
           <input ref={confirmPW} type="text" id="confirmPW-field" placeholder="Confirm your password" />
-          <input onClick={ e => handleClick(e) } type="submit" value="Create Your Account" className="btn" id="sign-up-form-submit" />
+          <button onClick={ e => onAddUser(e) } value="Create Your Account" className="btn" id="sign-up-form-submit"></button>
           <small>
             Already have an account?<Link to="/home">Signin</Link>
           </small>

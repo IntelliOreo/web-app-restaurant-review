@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom/client"
 import App from './App.jsx';
 import './style.css';
 import { 
@@ -10,10 +10,10 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home.jsx';
+import About from './pages/About.js';
+import Contact from './pages/Contact.js';
+import ErrorPage from './pages/ErrorPage.js';
 
 const AppLayout = () => {
   return (

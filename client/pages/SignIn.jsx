@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import logo from "../../public/images/web-app-logo.png";
 import { Link, Outlet } from 'react-router-dom'
 import {toast} from 'react-toastify'
+import axios from 'axios';
 
 const SignIn = () => {
   const username = useRef(null);
@@ -31,6 +32,24 @@ const SignIn = () => {
       console.log(password.current.value);
 
       // Call the API to login user
+
+      axios.post('/users/signin', {
+        username: username.current.value,
+        password: password.current.value,
+      }).then((res) => {
+        console.log(res);
+        if (res.data === 'User Not Found') {
+
+        } else {
+  
+          window.location.assign('/home');
+        }
+      })
+      // clear inputs after button click
+      setUsernameInput('');
+      setPasswordInput('');
+    
+      //
 
       toast.success(`Welcome ${username.current.value}`)
 
