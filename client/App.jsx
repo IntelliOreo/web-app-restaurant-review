@@ -1,5 +1,6 @@
 import React from 'react';
-import './style.css';
+import GlobalStyle from './styles/globalStyles';
+
 import { Route, Routes, Link } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,26 +8,31 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
+import Home from './pages/HomePage/Home'
+
 
 import SignIn from './pages/signIn';
 import SignUp from './pages/signUp';
+import { InfoSec } from './components/InfoSection/InfoSection.elements';
+import { InfoSection } from './components/InfoSection/InfoSection';
 
 
 export default function App() {
     return (
-     <>
-      <Navbar />
-      <Hero />
-      <Testimonials />
-      <Footer />
-      <Routes> 
-        <Route path='/' element={<SignIn />} />
-        <Route path='/signUp' element={<SignUp />} />
-        
-      </Routes>
-      <ToastContainer />
+      <>
+        <GlobalStyle />
+        <Navbar />
+        <Hero />
+        <Routes>
+          <Route path='/' exact element={Home} />
+          {/* <Route path='/' exact element={AboutUs} />
+          <Route path='/' exact element={Products} /> */}
+          <Route path='/signUp' element={<SignUp />} />       
+        </Routes>
+        <InfoSec />
+        <Footer />
+        <ToastContainer />
       </> 
     )    
 };
