@@ -7,25 +7,26 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: "Eudoxus Sans", sans-serif;
   scroll-behavior: smooth;
+
+  outline: 1px solid red;
   }
 `;
 
 export const Container = styled.div`
   z-index: 1;
   width: 100%;
+  max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding: 0 30px;
 
-
-  @media screen and (max-width: 991px) {
-    padding-right: 30px;
-    padding-left: 30px;
+  @media screen and (max-width: 960px) {
+    padding: 0 30px;
     
-  } 
-
+  }
 `;
+
+
 
 export const Button = styled.button`
 border-radius: 4px;

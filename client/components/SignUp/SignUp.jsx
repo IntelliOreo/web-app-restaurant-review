@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import sideImage from "../../public/images/sign-up-page2.jpg";
+import sideImage from "../../../public/images/sign-up-page2.jpg";
 import { Link, Outlet } from 'react-router-dom'
 
 export function SignUp() {

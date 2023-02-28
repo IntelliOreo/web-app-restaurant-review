@@ -13,41 +13,27 @@ import {
   Img
 } from './InfoSection.elements';
 
-export function InfoSection({
-  primary,
-  lightBg,
-  topLine,
-  lightTopLine,
-  lightText,
-  lightTextDesc,
-  headline,
-  description,
-  buttonLabel,
-  img,
-  alt,
-  imgStart,
-  start
-}) {
+export default function InfoSection() {
   return (
     <>
-      <InfoSec lightBg={lightBg}>
+      <InfoSec >
         <Container>
-          <InfoRow imgStart={imgStart}>
+          <InfoRow >
             <InfoColumn>
               <TextWrapper>
-                <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
+                <TopLine>Social Media for Foodies</TopLine>
+                <Heading>Create.<br />Connect.<br/>Critique.</Heading>
+                <Subtitle>Tell us about your favorite experiences.</Subtitle>
                 <Link to='/sign-up'>
-                  <Button big fontBig primary={primary}>
-                    {buttonLabel}
+                  <Button >
+                    
                   </Button>
                 </Link>
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
-              <ImgWrapper start={start}>
-                <Img src={img} alt={alt} />
+              <ImgWrapper >
+                <Img />
               </ImgWrapper>
             </InfoColumn>
           </InfoRow>
@@ -56,3 +42,4 @@ export function InfoSection({
     </>
   );
 };
+

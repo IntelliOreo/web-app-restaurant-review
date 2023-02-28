@@ -9,8 +9,8 @@ export const homeObjOne = {
   headline: 'Every Meal Tells a Story. Share Yours.',
   lightText: true,
   topLine: 'Social Media Application',
-  img: require('./../../../public/images/reviews.svg'),
-  alt: '',  
+  img: require('../../../public/images/hero-image.jpg'),
+  alt: 'image',  
   start: '',
 }
 

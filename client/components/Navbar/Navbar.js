@@ -19,12 +19,18 @@ import {
   from './Navbar.elements';
 
 
-const Navbar = () => {
+const Navbar = ({ handleLoginClick }) => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
+  
   const handleClick = () => setClick(!click);
+
   const closeMobileMenu = () => setClick(false);
+
+  const handleMainClick = () => {
+    handleLoginClick()
+  };
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -64,12 +70,12 @@ const Navbar = () => {
               </NavItem>
               <NavItemBtn>
                 {button ? (
-                  <NavBtnLink to='/sign-in'>
-                    <Button primary>SIGN IN</Button>
+                  <NavBtnLink>
+                    <Button onClick={handleMainClick} >SIGN IN</Button>
                   </NavBtnLink>
                 ) : (
-                  <NavBtnLink to='/sign-in'>
-                    <Button onClick={closeMobileMenu} fontBig primary>SIGN IN</Button>
+                  <NavBtnLink >
+                    <Button onClick={closeMobileMenu} >SIGN IN</Button>
                   </NavBtnLink>
                 )}
               </NavItemBtn>

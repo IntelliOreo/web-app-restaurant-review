@@ -19,6 +19,7 @@
     "cookie-parser": "^1.4.6",
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^8.0.1",
+    "framer-motion": "^9.0.7",
     "mongoose": "^6.3.4",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",

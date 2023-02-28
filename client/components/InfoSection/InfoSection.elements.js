@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InfoSec = styled.div`
   color: #fff;
   padding: 160px 0;
-  background: ${({ lightBg }) => (lightBg ? '#fff' : '#101522')};
+  background-color: white;
 `;
 
 export const InfoRow = styled.div`
@@ -43,11 +43,11 @@ export const TextWrapper = styled.div`
 export const ImgWrapper = styled.div`
   max-width: 555px;
   display: flex;
-  justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+  justify-content: center;
 `;
 
 export const TopLine = styled.div`
-  color: ${({ lightTopLine }) => (lightTopLine ? '#a9b3c1' : '#4B59F7')};
+  color: #000;
   font-size: 18px;
   line-height: 16px;
   font-weight: 700;
@@ -56,6 +56,7 @@ export const TopLine = styled.div`
 `;
 
 export const Img = styled.img`
+  background-image: url('../../../public/images/undraw_reviews_lp8w.png');
   padding-right: 0;
   border: 0;
   max-width: 100%;
@@ -69,7 +70,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#1c2237')};
+  color: #000;
 `;
 
 export const Subtitle = styled.p`
@@ -77,5 +78,5 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
+  color: #000;
 `;
