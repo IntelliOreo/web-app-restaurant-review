@@ -46,6 +46,7 @@ export const Container = styled.div`
     
   }
 `;
+
 export const Left = styled.div`
   padding-top: 200px;
   display: flex;
@@ -112,7 +113,7 @@ export const Button = styled.a`
   text-align: center;
   color: #fff;
   cursor: pointer;
-  background: linear-gradient(90deg, black, orange);
+  background: #01bf71;
   text-decoration: none;
   box-shadow: 0 15px 14px rgb(0 42 177/ 12%);
 `;

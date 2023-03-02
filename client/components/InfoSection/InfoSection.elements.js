@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import ReviewsImage from '../../../public/images/reviews-image.png'
 export const InfoSec = styled.div`
   color: #fff;
   padding: 160px 0;
@@ -40,11 +40,7 @@ export const TextWrapper = styled.div`
   }
 `;
 
-export const ImgWrapper = styled.div`
-  max-width: 555px;
-  display: flex;
-  justify-content: center;
-`;
+
 
 export const TopLine = styled.div`
   color: #000;
@@ -54,15 +50,20 @@ export const TopLine = styled.div`
   letter-spacing: 1.4px;
   margin-bottom: 16px;
 `;
+export const ImgWrapper = styled.div`
+  max-width: 555px;
+  display: flex;
+  justify-content: stretch;
+`;
 
 export const Img = styled.img`
-  background-image: url('../../../public/images/undraw_reviews_lp8w.png');
+  background-image: url('../../../public/images/reviews-image.png');
   padding-right: 0;
   border: 0;
   max-width: 100%;
   vertical-align: middle;
-  display: inline-block;
-  max-height: 500px;
+  
+  height: 500px;
 `;
 
 export const Heading = styled.h1`
