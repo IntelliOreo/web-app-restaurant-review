@@ -5,29 +5,27 @@ import mongoose from 'mongoose'
 import userRoutes from './routes/UserRoutes.js'
 import reviewRoutes from './routes/ReviewRoutes.js'
 import sessionRoutes from './routes/SessionRoutes.js'
-// import path from 'path'
-// import cors from 'cors'
+import NotesRoutes from './routes/NotesRoutes.js'
+
+
 dotenv.config()
 
 // Instantiate Express App
 const app = express()
-const PORT = 8080
+const PORT = 3000
 
 // Middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-// app.use(cors(--Needs cors options here--))
+
 
 // Routes
 app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 app.use('/api/session', sessionRoutes)
-
-app.post("/api/test",function(req,res){
-  res.send("here")
-})
-
+app.use('/api/note', NotesRoutes)
+app.use('/api', NotesRoutes)
 
 
 // Not Found
@@ -43,33 +41,24 @@ app.use((err, req, res, next) => {
   res.status(500).json(errObj)
 })
 
-// Listen only if db is connected
-// mongoose.set('strictQuery', false)
-// mongoose
-//   .connect(process.env.MONGO_URI, {
-//     useUnifiedTopology: true,
-//     useNewUrlParser: true
-//   })
-//   .then(() => {
-//     console.log('Connected to Mongo Database')
-//     app.listen(PORT, () => {
-//       console.log(`Server listening on port: ${PORT}`)
-//     })
-//   })
-//   .catch((e) => {
-//     console.log('Unable to connect to database')
-//     console.error('Mongo ERROR:', e)
-//   })
-
-
-
-
-  //my code
-
-  app.listen(PORT, ()=>{
-    console.log("server runing")
+// Database
+mongoose.set('strictQuery', false)
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
   })
-  
-  
-  // const NotesRouter = require("./routes/NotesRouter");
-  // app.use("/CreateNew", NotesRouter);
+  .then(() => {
+    console.log('Connected to Mongo Database')
+    })
+  .catch((e) => {
+    console.log('Unable to connect to database')
+    console.error('Mongo ERROR:', e)
+  })
+
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
+});
+
+

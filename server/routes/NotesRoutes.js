@@ -1,26 +1,9 @@
-const express = require("express");
+import express from 'express'
+import { createNote, getAllNotes, deleteNote } from '../controllers/NotesController.js'
 const router = express.Router();
-
-const NotesController = require("../controllers/NotesController");
-
-router.get(
-    "/",
-    NotesController.getNotes,
-    (req, res) => res.status(200).json(res.locals.AllNotes)
-  );
-
-
-router.post(
-    "/notes",
-    NotesController.getNotes,
-    NotesController.addNote,
-    (req, res) => res.sendStatus(200)
-  );
-
-router.post(
-    "/Notes",
-    NotesController.addNew,
-    (req, res) => res.sendStatus(200)
-  );
-
-  module.exports = router;
+//api/note/
+router.get('/show',getAllNotes)
+router.post('/create', createNote)
+router.delete('/delete', deleteNote)
+router.get('/db',getAllNotes)
+  export default router;

@@ -1,11 +1,13 @@
-import React, { Component, useState } from 'react';
-import CreateNew from './components/CreateNew'
+import React from 'react'
+import ShowMyNotes from './components/showMyNotes';
+import ShowNotes from './components/ShowNotes';
 
 function App() {
 
     return(
       <div className="main"> 
-      <CreateNew/>
+      {/* <ShowMyNotes/> */}
+      <ShowNotes/>
       </div>
     );
 }

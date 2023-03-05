@@ -12,4 +12,6 @@ router.post('/update', session.updateSession, update)
 
 router.delete('/clearUp', session.clearupSession, clearUp)
 
+
+
 export default router
