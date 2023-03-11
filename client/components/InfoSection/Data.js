@@ -1,17 +1,18 @@
 export const homeObjOne = {
-  lightBg: true,
-  primary: true,
-  imgStart: '',
-  lightTopLine: true,
-  lightTextDesc: true,
-  buttonLabel: 'Get Started',
-  description: 'We help restaurang goers share their favorite meals, see where their friends are eating, and build relationships through dining out. Reviews.io brings a modern twist to breaking bread.',
-  headline: 'Every Meal Tells a Story. Share Yours.',
+  id: 'about',
+  lightBg: false,
   lightText: true,
+  lightTextDesc: true,
   topLine: 'Social Media Application',
-  img: require('../../../public/images/hero-image.jpg'),
+  headline: 'Every Meal Tells a Story. Share Yours.',
+  description: 'We help restaurang goers share their favorite meals, see where their friends are eating, and build relationships through dining out. Reviews.io brings a modern twist to breaking bread.',
+  buttonLabel: 'Get Started',
+  imgStart: false,
+  img: require('../../../public/images/svg-1.svg'),
   alt: 'image',  
-  start: '',
+  dark: true,
+  primary: true,
+  darkText: false,
 }
 
 export const homeObjTwo = {

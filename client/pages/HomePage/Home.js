@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InfoSection from '../../components/InfoSection/InfoSection';
-import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
+// import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 
 
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <>
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
-      <InfoSection {...homeObjThree} />
-      <InfoSection {...homeObjFour} />
-
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
+      {/* <Hero /> */}
+      
+      <ToastContainer /> */}
     </>
   )
 }
