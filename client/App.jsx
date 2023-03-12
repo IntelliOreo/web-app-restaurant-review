@@ -13,7 +13,7 @@ import InfoSection from './components/InfoSection/InfoSection.js';
 import Footer from './components/Footer/Footer';
 
 import Home from './pages/HomePage/Home';
-import SignIn from './pages/SignIn/SignIn';
+import SignIn from './pages/SignIn/newSignIn';
 import SignUp from './pages/SignUp/SignUp';
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
         <Hero />
         <Routes>
           <Route path='/' exact element={ Home } />
-          <Route path='/SignIn' exact element={ SignIn  } />
+          <Route path='/SignIn' exact element={ SignIn } />
           {/* <Route path='/SignUp' element={ <SignUp /> } />        */}
         </Routes>
         <InfoSection />

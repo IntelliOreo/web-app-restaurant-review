@@ -36,7 +36,7 @@ const SignIn = () => {
       toast.success(`Welcome ${username.current.value}`)
 
     } catch (error) {
-      console.lof(error)
+      console.log(error)
       toast.error('SERVER ERROR')
       return
     }
