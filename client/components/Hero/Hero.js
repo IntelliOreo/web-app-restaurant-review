@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from '../Button/Button.elements';
+import { Link } from 'react-router-dom';
+import SignIn from '../../pages/SignIn/SignIn.js';
 import {
   HeroContainer,
   HeroBg,
@@ -12,12 +14,14 @@ import {
 
 } from './Hero.elements';
 
-const Hero = () => {
+export default function Hero() {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
     setHover(!hover)
   }
+
+
 
   return (
     <HeroContainer >
@@ -26,23 +30,22 @@ const Hero = () => {
         <HeroH1>Every Meal Tells A Story</HeroH1>
         <HeroH2>So what are you waiting for?</HeroH2>
         <HeroBtnWrapper>
-          <Button 
-          to='signup' 
-          onMouseEnter={onHover} 
-          onMouseLeave={onHover}
-          primary='true'
-          dark='true'
-          >
+          <Link to='SignIn' id='sign-in-path' >
+            <Button 
+            onMouseEnter={onHover} 
+            onMouseLeave={onHover}
+            primary='true'
+            dark='true'
+            >
 
-            Share Yours {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
+              Share Yours {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </Link>
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
   )
-}
-
-export default Hero;
+};
 
 
 

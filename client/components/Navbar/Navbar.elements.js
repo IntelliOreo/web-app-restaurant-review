@@ -16,7 +16,7 @@ position: sticky;
 top: 0;
 z-index: 10;
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 7600px) {
   transition: 0.8s all ease;
 }
 `;
@@ -83,7 +83,7 @@ export const NavItem = styled.li`
   }
 `
 
-export const NavLinks = styled(LinkS)`
+export const NavLinks = styled(LinkR)`
   color: #fff;
   display: flex;
   font-size: 1rem;

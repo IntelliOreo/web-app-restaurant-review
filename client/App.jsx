@@ -3,6 +3,8 @@ import GlobalStyle from './styles/globalStyles';
 
 import { Route, Routes, } from 'react-router-dom';
 
+import Popup from 'reactjs-popup';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -31,7 +33,7 @@ export default function App() {
         <Hero />
         <Routes>
           <Route path='/' exact element={ Home } />
-          <Route path='/SignIn' exact element={ SignIn } />
+          <Route id='sign-in-path' path='/SignIn' exact element={ <SignIn /> } />
           {/* <Route path='/SignUp' element={ <SignUp /> } />        */}
         </Routes>
         <InfoSection />
