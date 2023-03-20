@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaBars } from 'react-icons/fa';
+import SignIn from '../../pages/SignIn/SignIn';
 import {
   Nav,
   NavbarContainer,
