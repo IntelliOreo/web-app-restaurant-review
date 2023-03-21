@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Eudoxus Sans", sans-serif;
   scroll-behavior: smooth;
 
-  outline: 1px solid red;
   }
 `;
 

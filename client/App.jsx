@@ -15,7 +15,7 @@ import InfoSection from './components/InfoSection/InfoSection.js';
 import Footer from './components/Footer/Footer';
 
 import Home from './pages/HomePage/Home';
-import SignIn from './pages/SignIn/newSignIn';
+import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 
 export default function App() {
