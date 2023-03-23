@@ -4,6 +4,8 @@ const GlobalStyle = createGlobalStyle`
   *{
   margin: 0;
   padding: 0;
+  outline: 0;
+  text-decoration: none;
   box-sizing: border-box;
   font-family: "Eudoxus Sans", sans-serif;
   scroll-behavior: smooth;

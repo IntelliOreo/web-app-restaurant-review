@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import { Container } from '../../styles/globalStyles';
 import { CgBowl } from 'react-icons/cg';
 import { Link as LinkR } from 'react-router-dom';
-import { Link as LinkS } from 'react-scroll'; 
 
 export const Nav = styled.nav`
 background: #101522;
@@ -79,7 +77,7 @@ export const NavItem = styled.li`
   height: 5rem;
   border-bottom: 2px solid transparent;
   &:hover {
-    border-bottom: 2px solid #4b59f7;
+    border-bottom: 2px solid #FFa500;
   }
 `
 
@@ -94,7 +92,7 @@ export const NavLinks = styled(LinkR)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid #FFa500;
   }
 
   /* @media screen and (max-width: 960px) {
@@ -115,7 +113,7 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled(LinkR)`
+export const SignInButton = styled.button`
   border-radius: 50px;
   background: #FFa500;
   white-space: nowrap;
@@ -134,48 +132,3 @@ export const NavBtnLink = styled(LinkR)`
     color: #010606;
   }
 `
-
-
-
-
-
-
-
-
-// export const NavItemBtn = styled.li`
-
-//   @media screen and (max-width: 960px) {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-//     height: 120px;
-//   }
-// `;
-
-
-
-//   @media screen and (max-width: 960px) {
-//     text-align: center;
-//     padding: 2rem;
-//     width: 100%;
-//     display: table;
-    
-//     &:hover {
-//       color: #4b59f7;
-//       transition: all 0.3s ease;
-//     }
-//   }
-// `;
-
-// export const NavBtnLink = styled(Link)`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-decoration: none;
-//   padding: 8px 16px;
-//   height: 100%;
-//   width: 100%;
-//   border: none;
-//   outline: none;
-// `;

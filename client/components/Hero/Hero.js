@@ -30,14 +30,13 @@ export default function Hero() {
         <HeroH1>Every Meal Tells A Story</HeroH1>
         <HeroH2>So what are you waiting for?</HeroH2>
         <HeroBtnWrapper>
-          <Link to='SignIn' id='sign-in-path' >
+          <Link id='sign-in-path' >
             <Button 
             onMouseEnter={onHover} 
             onMouseLeave={onHover}
             primary='true'
             dark='true'
             >
-
               Share Yours {hover ? <ArrowForward /> : <ArrowRight />}
             </Button>
           </Link>
