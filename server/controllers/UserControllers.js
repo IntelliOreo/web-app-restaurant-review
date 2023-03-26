@@ -5,10 +5,10 @@ import bcrypt from 'bcrypt'
  * @description Sign Up user
  */
 export const signUp = async (req, res) => {
-  const { name, email, password } = req.body
+  const { username, email, password } = req.body
 
-  if (!name || !email || !password) {
-    //if no name, no email, or no password
+  if (!username || !email || !password) {
+    //if no username, no email, or no password
     return res.status(400).json({
       message: 'Missing 1 or more required fields.'
     })
@@ -28,7 +28,7 @@ export const signUp = async (req, res) => {
     const encryptedPassword = await bcrypt.hash(password, 10)
 
     const newUser = await User.create({
-      name,
+      username,
       email,
       password: encryptedPassword
     })
