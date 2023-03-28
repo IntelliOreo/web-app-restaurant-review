@@ -2,7 +2,9 @@ import React, { useRef, useState } from "react";
 import { Link, Outlet } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
+import NekoLogo from '../../../public/images/web-app-logo.png';
+
 
 const SignIn = () => {
   
@@ -49,10 +51,11 @@ const SignIn = () => {
   
   return (
   <main className="sidebar-container">
-    
+    <img src={NekoLogo} style={{ width: "8rem", }}/>
+    <h1>Reviews.io</h1>
     <section className="sidebar-form">
       <button className="btn">
-        <img src="public/images/web-app-logo.png" alt=""/>
+        <img src="#" alt=""/>
         Log in with Google
       </button>
       <small>or</small>

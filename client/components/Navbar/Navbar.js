@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import Modal from '../Modals/Modal';
 import { SignInButton } from '../Button/Button.elements';
 import {
   Nav,
@@ -12,15 +12,21 @@ import {
   NavMenu,
   NavItem,
   NavLinks,
-  NavBtn,
+  NavButtonContainer,
 } from './Navbar.elements';
+import SignIn from '../../pages/SignIn/SignIn';
+const BUTTON_WRAPPER_STYLES = {
+  position: 'relative',
+  zIndex: 1
+}
 
 const Navbar = ({ toggle,  }) => {
+  const [isOpen, setIsOpen] = useState(false)
   
   return (
     <>
       <Nav>
-        <NavbarContainer>
+        <NavbarContainer> 
           <NavLogo to="/">
             <NavIcon />
             REVIEWS.IO
@@ -41,14 +47,15 @@ const Navbar = ({ toggle,  }) => {
             <NavItem>
               <NavLinks to="/signUp">Sign Up</NavLinks>
             </NavItem>
-            <NavBtn>
-              <Link to='/signIn'>
-                <SignInButton >
-                  Sign In
-                </SignInButton>
-               
-              </Link>
-            </NavBtn>
+            <NavButtonContainer  onClick={() => console.log('clicked')}>            
+              <SignInButton onClick={() => setIsOpen(true)}>Sign In</SignInButton>
+              <Modal
+                open={isOpen}
+                onClose={() => setIsOpen(false)}
+              >
+                <SignIn />
+              </Modal>                         
+            </NavButtonContainer>
           </NavMenu>
         </NavbarContainer>
       </Nav>

@@ -104,7 +104,7 @@ export const NavLinks = styled(LinkR)`
   /* } */
 `;
 
-export const NavBtn = styled.nav`
+export const NavButtonContainer = styled.nav`
   display: flex;
   align-items: center;
 
