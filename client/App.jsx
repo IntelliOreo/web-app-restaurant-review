@@ -33,8 +33,8 @@ export default function App() {
         <Hero />
         <Routes>
           <Route path='/' exact element={ Home } />
-          <Route path='SignIn' element={ <SignIn /> } />
-          <Route path='SignUp' element={ <SignUp /> } />       
+          <Route path='/signIn' element={ <SignIn /> } />
+          <Route path='/signUp' element={ <SignUp /> } />       
         </Routes>
         <InfoSection />
         <Footer />

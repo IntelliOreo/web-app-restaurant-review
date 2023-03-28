@@ -1,58 +1,8 @@
-// import React from 'react'
-// import {
-//   InfoContainer,
-//   InfoWrapper,
-//   InfoRow,
-//   Column1,
-//   Column2,
-//   TextWrapper,
-//   TopLine,
-//   Heading,
-//   Subtitle,
-//   BtnWrap,
-//   ImgWrap,
-//   Img,
-// } from './InfoSection.elements';
-
-// import { Button } from '../Button/Button.elements';
-
-// export default function InfoSection (lightBg, id, imgStart, lightText, darkText, topLine, headline, description, buttonLabel, img) {
-//   return (
-//     <>
-//       <InfoContainer lightBg={lightBg} id={id}>
-//         <InfoWrapper>
-//           <InfoRow imgStart={imgStart}>
-//             <Column1>
-//               <TextWrapper>
-//                 <TopLine>{topLine}</TopLine>
-//                 <Heading lightText={lightText}>{headline}</Heading>
-//                 <Subtitle darkText={darkText}>{description}</Subtitle>
-//                 <BtnWrap>
-//                   <Button to="#">{buttonLabel}</Button>
-//                 </BtnWrap>
-//               </TextWrapper>
-//             </Column1>
-//             <Column2>
-//               <ImgWrap>
-//                 <Img src={img} alt='img' />
-//               </ImgWrap>
-//             </Column2>
-//           </InfoRow>
-//         </InfoWrapper>
-//       </InfoContainer>
-//     </>
-//   )
-// };
-
-
-
-
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, Button } from '../../styles/globalStyles';
 import {
-  InfoSec,
+  InfoContainer,
   InfoRow,
   InfoColumn,
   TextWrapper,
@@ -64,9 +14,15 @@ import {
 } from './InfoSection.elements';
 
 export default function InfoSection() {
+  const navigate = useNavigate();
+
+    function handleSignInClick() {
+      navigate('/signIn');
+    }
+
   return (
     <>
-      <InfoSec >
+      <InfoContainer >
         <Container>
           <InfoRow >
             <InfoColumn>
@@ -74,9 +30,9 @@ export default function InfoSection() {
                 <TopLine>Social Media for Foodies</TopLine>
                 <Heading>Create.<br />Connect.<br/>Critique.</Heading>
                 <Subtitle>Tell us about your favorite experiences.</Subtitle>
-                <Link to='/sign-up'>
-                  <Button >
-                    
+                <Link to='/signIn'>
+                  <Button onClick={handleSignInClick}>
+                    Get Started Today!
                   </Button>
                 </Link>
               </TextWrapper>
@@ -88,7 +44,7 @@ export default function InfoSection() {
             </InfoColumn>
           </InfoRow>
         </Container>
-      </InfoSec>
+      </InfoContainer>
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import logo from "../../../public/images/web-app-logo.png";
 import { Link, Outlet } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
