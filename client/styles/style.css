@@ -13,55 +13,65 @@
 
 .sidebar-container {
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 0.1875;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  align-self: stretch;
+  padding-top: 6rem;
+  align-self: center;
 }
 
+.logo-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 img, h2 {
   text-align: center;
-  font-size: 3em;
+  font-size: 2rem;
 }
 
 h3 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
   color: red;
 
 }
 img.logo{
-  width: 200px;
-  margin: 20px auto;
+  width: 4rem;
+  margin: 1.25rem auto;
   display: block;  
 }
 .sidebar-form {
-  border-right: 1px solid #ecf2ff;
+  border: 1px solid #ecf2ff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 40px 40px 40px;
+  padding: 1rem 2rem 2rem 2rem;
   flex: 1;
 }
 
 .form-control {
   width: 100%;
-  margin: 10px 0;
+  margin: .5rem 0;
 }
 
 label {
   display: inline-block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: .3125rem;
 }
 
 input:not([type="checkbox"]) {
   background-color: transparent;
-  border: 2px solid #ecf2ff;
-  border-radius: 3px;
+  border: .125rem solid #ecf2ff;
+  border-radius: .1875rem;
   font-family: inherit;
-  font-size: 14px;
-  padding: 10px;
+  font-size: .875rem;
+  padding: .625rem;
   width: 100%;
 }
 
@@ -84,8 +94,8 @@ input:not([type="checkbox"]) {
 
 .btn {
   cursor: pointer;
-  background-color: lightslategray;
-  border: 2px solid lightslategray;
+  background-color: #FFa500;
+  border: 2px solid #fff;
   border-radius: 3px;
   color: #fff;
   display: flex;
@@ -100,8 +110,8 @@ input:not([type="checkbox"]) {
 }
 
 input.btn {
-  background-color: lightslategrey;
-  border: 2px solid lightslategray;
+  background-color: #FFa500;
+  border: 2px solid #fff;
   color: #fff;
 
 }

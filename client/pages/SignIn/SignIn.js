@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
-import logo from "../../../public/images/web-app-logo.png";
-import { Link, Outlet } from 'react-router-dom'
-import {toast} from 'react-toastify'
+import { Link, Outlet } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'react-toastify';
+import NekoLogo from '../../../public/images/web-app-logo.png';
+
 
 const SignIn = () => {
   
@@ -47,12 +50,12 @@ const SignIn = () => {
   }
   
   return (
-  <div className="sidebar-container">
-    <img className="logo" src={ logo } alt="placeholder logo"/>
-    <h2 className="app-name">Reviews.io</h2>
+  <main className="sidebar-container">
+    <img src={NekoLogo} style={{ width: "8rem", }}/>
+    <h1>Reviews.io</h1>
     <section className="sidebar-form">
       <button className="btn">
-        <img src="public/images/web-app-logo.png" alt=""/>
+        <img src="#" alt=""/>
         Log in with Google
       </button>
       <small>or</small>
@@ -77,7 +80,7 @@ const SignIn = () => {
         </form>
       </div>       
     </section>
-  </div>
+  </main>
   )
 }
 
