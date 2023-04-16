@@ -4,7 +4,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 import NekoLogo from '../../../public/images/web-app-logo.png';
-
+import axios  from 'axios'
 
 const SignIn = () => {
   
@@ -30,19 +30,35 @@ const SignIn = () => {
 
     if (errors) return
     // Send to Backend
-    try {
-      console.log(username.current.value);
-      console.log(password.current.value);
+    axios.post('api/user/signIn', {
+      email: 'nn',
+      password: 'rrr'
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  // try {
+  //     console.log(username.current.value);
+  //     console.log(password.current.value);
 
-      // Call the API to login user
+  //     // Call the API to login user
+  //     const url = 'http://localhost:3000/api/user/signIn'
+  //     const response = axios.post(
+  //       url, { email: username.current.value, 
+  //             password: password.current.value } 
+  //     )
+  //     console.log('response: ' + response)
+  //     toast.success(`Welcome ${username.current.value}`)
 
-      toast.success(`Welcome ${username.current.value}`)
+  //   } catch (error) {
+  //     console.log(error)
+  //     toast.error('SERVER ERROR')
+  //     return
+  //   }
 
-    } catch (error) {
-      console.log(error)
-      toast.error('SERVER ERROR')
-      return
-    }
 
 
     

@@ -20,7 +20,10 @@ app.get(
     return res.json(res.locals.curSession);
   }
 );
-
+app.post('/api/user/signIn', (req, res) => {
+  console.log('req.bodyreq.bodyreq.bodyreq.bodyreq.body' + req.body)
+  return res.sendStatus(200);
+});
 app.post('/api', sessionController.updateSession, (req, res) => {
   return res.json(res.locals.updateSession);
 });
