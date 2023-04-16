@@ -30,9 +30,10 @@ const SignIn = () => {
 
     if (errors) return
     // Send to Backend
+
     axios.post('api/user/signIn', {
-      email: 'nn',
-      password: 'rrr'
+      email: username.current.value,
+      password: password.current.value
     })
     .then(function (response) {
       console.log(response);
@@ -40,27 +41,6 @@ const SignIn = () => {
     .catch(function (error) {
       console.log(error);
     });
-  // try {
-  //     console.log(username.current.value);
-  //     console.log(password.current.value);
-
-  //     // Call the API to login user
-  //     const url = 'http://localhost:3000/api/user/signIn'
-  //     const response = axios.post(
-  //       url, { email: username.current.value, 
-  //             password: password.current.value } 
-  //     )
-  //     console.log('response: ' + response)
-  //     toast.success(`Welcome ${username.current.value}`)
-
-  //   } catch (error) {
-  //     console.log(error)
-  //     toast.error('SERVER ERROR')
-  //     return
-  //   }
-
-
-
     
     
   }
