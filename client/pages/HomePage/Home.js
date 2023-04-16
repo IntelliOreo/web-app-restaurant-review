@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Sidebar from '../../components/Sidebar/Sidebar'
+import Navbar from '../../components/Navbar/Navbar'
+import { ToastContainer, toast } from 'react-toastify'
 // import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 
 

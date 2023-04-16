@@ -32,7 +32,7 @@ export default function App() {
         <Navbar toggle={toggle}/>
         <Hero />
         <Routes>
-          <Route path='/' exact element={ Home } />
+          <Route path='/' exact element={ <Home /> } />
           <Route path='/signIn' element={ <SignIn /> } />
           <Route path='/signUp' element={ <SignUp /> } />       
         </Routes>
