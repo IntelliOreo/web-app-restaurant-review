@@ -1,14 +1,44 @@
-import React, { Component, useState } from 'react';
-import CreateNew from './components/CreateNew'
+import React, { useState } from 'react';
+import GlobalStyle from './styles/globalStyles';
 
-function App() {
+import { Route, Routes, } from 'react-router-dom';
 
-    return(
-      <div className="main"> 
-      <CreateNew/>
-      </div>
-    );
-}
+import Popup from 'reactjs-popup';
 
-export default App;
- 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import Hero from './components/Hero/Hero';
+import InfoSection from './components/InfoSection/InfoSection.js';
+import Footer from './components/Footer/Footer';
+
+import Home from './pages/HomePage/Home';
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignUp/SignUp';
+
+export default function App() {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
+    return (
+      <>
+        <GlobalStyle />
+        <Sidebar isOpen={isOpen} toggle={toggle}/>
+        <Navbar toggle={toggle}/>
+        <Hero />
+        <Routes>
+          <Route path='/' exact element={ <Home /> } />
+          <Route path='/signIn' element={ <SignIn /> } />
+          <Route path='/signUp' element={ <SignUp /> } />       
+        </Routes>
+        <InfoSection />
+        <Footer />
+        <ToastContainer />
+      </> 
+    )    
+};
