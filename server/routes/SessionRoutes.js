@@ -1,7 +1,7 @@
-import express from 'express'
-import { start, update, clearUp } from '../controllers/SessionControllers.js'
-import session from '../middlewares/session.js'
-import cookie from '../middlewares/cookie.js'
+const express = require('express');
+const { start, update, clearUp } = require('../controllers/SessionControllers');
+const session = require('../middlewares/session');
+const cookie = require('../middlewares/cookie');
 
 // Initialize router
 const router = express.Router()
@@ -14,4 +14,4 @@ router.delete('/clearUp', session.clearupSession, clearUp)
 
 
 
-export default router
+module.exports = router;

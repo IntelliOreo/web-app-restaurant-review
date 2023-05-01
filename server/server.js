@@ -1,12 +1,14 @@
-import express from 'express'
-import cookieParser from 'cookie-parser'
-import dotenv from 'dotenv'
-import mongoose from 'mongoose'
-import userRoutes from './routes/UserRoutes.js'
-import reviewRoutes from './routes/ReviewRoutes.js'
-import sessionRoutes from './routes/SessionRoutes.js'
-import session from 'express-session'
-import MongoStore from 'connect-mongo'
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+const userRoutes = require('./routes/UserRoutes');
+const reviewRoutes = require('./routes/ReviewRoutes');
+const sessionRoutes = require('./routes/SessionRoutes');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 // import path from 'path'
 // import cors from 'cors'
@@ -14,15 +16,16 @@ dotenv.config()
 
 // Instantiate Express App
 const app = express()
-const PORT = process.env.PORT
+const PORT = 3000
 
 // Middlewares
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 mongoose.set('strictQuery', false)
-const sessionStore = new MongoStore({
+const sessionStore = MongoStore.create({
   mongoUrl: process.env.MONGO_URI,
   collection: 'sessions'
 })
@@ -42,14 +45,21 @@ app.use(
 // app.use(cors(--Needs cors options here--))
 
 // Routes
-app.use('/api/user', userRoutes)
+//app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
-app.use('/api/session', sessionRoutes)
-
+//app.use('/api/session', sessionRoutes)
+app.post('/api/user/signIn', (req, res) => {
+    console.log('req.body' + Object.values(req.body)[0], Object.values(req.body)[1])
+    return res.sendStatus(200);
+});
 // Not Found
 app.use('*', (req, res) => {
-  res.status(404).send('Not Found - 404 handler in server.js')
+    res.sendFile(path.join(__dirname, '../dist/'));
 })
+
+app.use((error, req, res, next) => {
+    return res.status(400).send("You in the wrong place");
+});
 
 app.use((err, req, res, next) => {
   console.log(err)

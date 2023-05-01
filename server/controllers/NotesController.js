@@ -1,6 +1,6 @@
-import Note from '../models/NoteModel.js'
+const Note = require('../models/NoteModel');
 
-export const createNote = async (req, res) => {
+const createNote = async (req, res) => {
   const { title, body, date } = req.body
 
    if ( !title ||!body || !date ){
@@ -25,7 +25,7 @@ return res.status(200).json ({
    }
 }
 
-export const getAllNotes = async(req,res) => {
+const getAllNotes = async(req,res) => {
   try {
     const notes = await Note.find().lean()
   return res.status(200).json({
@@ -41,7 +41,7 @@ export const getAllNotes = async(req,res) => {
 }
 
 
-export const deleteNote = async(req,res) => {
+const deleteNote = async(req,res) => {
   try {
     Note.findByIdAndRemove(req.body.id)
   } catch (error) {
@@ -52,4 +52,10 @@ export const deleteNote = async(req,res) => {
     })
    }
 }
+
+module.exports = {
+    createNote,
+    getAllNotes,
+    deleteNote
+};
   

@@ -1,5 +1,5 @@
-import express from 'express'
-import { signUp, signIn, signOut } from '../controllers/UserControllers.js'
+const express = require('express');
+const { signUp, signIn, signOut } = require('../controllers/UserControllers');
 
 // Intialize router
 const router = express.Router()
@@ -13,4 +13,4 @@ router.post('/signIn', signIn)
 // Sign Out
 router.post('/signOut', signOut)
 
-export default router
+module.exports = router;

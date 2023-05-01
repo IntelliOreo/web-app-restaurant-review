@@ -11,6 +11,6 @@ sessionController.updateSession = async (req, res, next) => {
 };
 
 sessionController.clearupSession = async (req, res, next) => {
-  return next(err);
+  return next();
 };
 module.exports = sessionController;

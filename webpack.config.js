@@ -1,19 +1,19 @@
 /* eslint-disable no-unused-vars */
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
-require('dotenv').config()
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+require('dotenv').config();
 
 module.exports = {
   entry: [
     // entry point of our app
-    './client/index.js'
+    './client/index.js',
   ],
   mode: 'none',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
     // publicPath: '/'
   },
   devtool: 'eval-source-map',
@@ -29,13 +29,13 @@ module.exports = {
       // match the output path
       directory: path.resolve(__dirname, 'dist'),
       // // match the output 'publicPath'
-      publicPath: '/'
+      publicPath: '/',
     },
 
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
     // /**
     //  * proxy is required in order to make api calls to
@@ -46,13 +46,13 @@ module.exports = {
     proxy: {
       '/**': {
         target: 'http://localhost:3000/',
-        secure: false
-      }
+        secure: false,
+      },
       //   '/assets/**': {
       //     target: 'http://localhost:3000/',
       //     secure: false,
       //   },
-    }
+    },
   },
   module: {
     rules: [
@@ -62,54 +62,54 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.tsx?$/i,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader'
-        }
+          loader: 'ts-loader',
+        },
       },
       {
         test: /\.scss$/i,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.css$/i,
         // exclude: /node_modules/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         //test gives regex file path, use is name of loader
         test: /\.(png|jpg|gif|svg)$/i,
         type: 'asset/resource',
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: './index.html',
     }),
     new webpack.DefinePlugin({
       'process.env': {
         REACT_APP_AUTH0_DOMAIN: JSON.stringify(
-          process.env.REACT_APP_AUTH0_DOMAIN
+            process.env.REACT_APP_AUTH0_DOMAIN
         ),
         REACT_APP_AUTH0_CLIENTID: JSON.stringify(
-          process.env.REACT_APP_AUTH0_CLIENTID
+            process.env.REACT_APP_AUTH0_CLIENTID
         ),
-        LOCALMODE: JSON.stringify(process.env.LOCALMODE)
-      }
-    })
+        LOCALMODE: JSON.stringify(process.env.LOCALMODE),
+      },
+    }),
     // new Dotenv({ systemvars: true }),
   ],
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
-  }
-}
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
+};

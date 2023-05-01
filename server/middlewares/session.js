@@ -1,4 +1,5 @@
-import Session from '../models/sessionModel.js'
+const Session = require('../models/sessionModel.js');
+
 
 const sessionController = {}
 
@@ -14,4 +15,4 @@ sessionController.clearupSession = async (req, res, next) => {
   return next(err)
 }
 
-export default sessionController
+module.exports = sessionController

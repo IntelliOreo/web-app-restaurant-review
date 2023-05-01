@@ -1,12 +1,12 @@
-import express from 'express'
-import verifyJwt from '../middlewares/verifyJwt.js'
-import {
+const express = require('express');
+const verifyJwt = require('../middlewares/verifyJwt');
+const {
   createReview,
   getReviewsByUserId,
   getReviewById,
   updateReviewById,
   deleteReviewById
-} from '../controllers/ReviewControllers.js'
+} = require('../controllers/ReviewControllers');
 
 // Intialize router
 const router = express.Router()
@@ -24,4 +24,4 @@ router
   .put(verifyJwt, updateReviewById)
   .delete(verifyJwt, deleteReviewById)
 
-export default router
+module.exports = router;

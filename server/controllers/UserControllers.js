@@ -1,10 +1,10 @@
-import User from '../models/UserModel.js'
-import bcrypt from 'bcrypt'
+const User = require('../models/UserModel');
+const bcrypt = require('bcrypt');
 
 /**
  * @description Sign Up user
  */
-export const signUp = async (req, res) => {
+const signUp = async (req, res) => {
   const { username, email, password } = req.body
 
   if (!username || !email || !password) {
@@ -48,7 +48,7 @@ export const signUp = async (req, res) => {
 /**
  * @description Sing In user
  */
-export const signIn = async (req, res) => {
+const signIn = async (req, res) => {
   const { email, password } = req.body
   if (!email && password) {
     //if no email
@@ -108,7 +108,7 @@ export const signIn = async (req, res) => {
 /**
  * @description Sign Out user
  */
-export const signOut = async (req, res) => {
+const signOut = async (req, res) => {
   try {
     const user = await User.findById(req.user._id)
     req.logout()
@@ -118,3 +118,10 @@ export const signOut = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' })
   }
 }
+
+module.exports = {
+  signUp,
+  signUp,
+  signIn,
+  signOut
+};

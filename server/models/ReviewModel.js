@@ -1,6 +1,6 @@
-import { Schema, model } from 'mongoose'
+const { Schema, model } = require('mongoose');
 
-const reviewSchema = new Schema({}, { timestamps: true })
+const reviewSchema = new Schema({}, { timestamps: true });
 
-const Review = model('Review', reviewSchema)
-export default Review
+const Review = model('Review', reviewSchema);
+module.exports = Review;

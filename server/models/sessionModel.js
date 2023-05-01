@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose'
-import session from 'express-session'
+const { Schema, model } = require('mongoose');
+const session = require('express-session');
 
-const sessionSchema = new Schema({}, { timestamps: true })
+const sessionSchema = new Schema({}, { timestamps: true });
 
-const Session = model('Session', sessionSchema)
-export default Session
+const Session = model('Session', sessionSchema);
+module.exports = Session;
