@@ -32,11 +32,13 @@ const SignIn = () => {
     // Send to Backend
 
     axios.post('api/user/signIn', {
-      email: username.current.value,
-      password: password.current.value
+      username: username.current.value,
+      password: password.current.value,
     })
     .then(function (response) {
-      console.log(response);
+      const userId = response.data.userId;
+      localStorage.setItem('userId', userId);
+      console.log('catch user id' + JSON.stringify( userId ) + response);
     })
     .catch(function (error) {
       console.log(error);

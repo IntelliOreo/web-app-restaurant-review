@@ -43,6 +43,7 @@
     "react-router-dom": "^6.6.2",
     "react-scroll": "^1.8.9",
     "react-toastify": "^9.1.1",
+    "react-uuid": "^2.0.0",
     "reactjs-popup": "^2.0.5",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",

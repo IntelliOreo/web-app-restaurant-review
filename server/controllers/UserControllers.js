@@ -1,12 +1,13 @@
 const User = require('../models/UserModel');
 const bcrypt = require('bcrypt');
 
+
 /**
  * @description Sign Up user
  */
 const signUp = async (req, res) => {
-  const { username, email, password } = req.body
-
+  const { username, email, userId, password } = req.body
+ console.log(req.body + 'inside backend!')
   if (!username || !email || !password) {
     //if no username, no email, or no password
     return res.status(400).json({
@@ -30,6 +31,7 @@ const signUp = async (req, res) => {
     const newUser = await User.create({
       username,
       email,
+      userId,
       password: encryptedPassword
     })
     return res.status(200).json({
@@ -39,7 +41,7 @@ const signUp = async (req, res) => {
   } catch (error) {
     console.log(error)
     return res.status(500).json({
-      message: 'SERVER ERROR',
+      message: 'sign up server error',
       error
     })
   }
@@ -49,27 +51,26 @@ const signUp = async (req, res) => {
  * @description Sing In user
  */
 const signIn = async (req, res) => {
-  const { email, password } = req.body
-  if (!email && password) {
+  const { username, password } = req.body
+  if (!username && password) {
     //if no email
     //display error message
     return res.status(400).json({
-      message: 'Please enter your email address.'
+      message: 'Please enter your username address.'
     })
-  } else if (email && !password) {
+  } else if (username && !password) {
     //if no password
     //display error message
     return res.status(400).json({
       message: 'Please enter your password.'
     })
-  } else if (!email && !password) {
+  } else if (!username && !password) {
     return res.status(400).json({
       message: 'Please enter the required fields.'
     })
   }
   // const existing user = email in body of request
-  const existingUser = await User.findOne({ email: req.body.email })
-
+  const existingUser = await User.findOne({ username: req.body.username })
   if (!existingUser) {
     return res.status(401).json({
       message: 'Invalid email address and/or password. Please try again.'
@@ -99,7 +100,8 @@ const signIn = async (req, res) => {
 
       return res.status(200).json({
         message: 'logged in',
-        session: JSON.stringify(req.session)
+        session: JSON.stringify(req.session),
+        userId: existingUser.userId
       })
     })
   })
@@ -112,10 +114,11 @@ const signOut = async (req, res) => {
   try {
     const user = await User.findById(req.user._id)
     req.logout()
+    localStorage.removeItem('userId')
     res.status(200).json({ message: 'User signed out successfully' })
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'Internal server error' })
+    res.status(500).json({ error: 'Sign out server error' })
   }
 }
 

@@ -13,7 +13,6 @@ const cors = require('cors');
 // import path from 'path'
 // import cors from 'cors'
 dotenv.config()
-
 // Instantiate Express App
 const app = express()
 const PORT = 3000
@@ -45,13 +44,13 @@ app.use(
 // app.use(cors(--Needs cors options here--))
 
 // Routes
-//app.use('/api/user', userRoutes)
+app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 //app.use('/api/session', sessionRoutes)
-app.post('/api/user/signIn', (req, res) => {
-    console.log('req.body' + Object.values(req.body)[0], Object.values(req.body)[1])
-    return res.sendStatus(200);
-});
+// app.post('/api/user/signIn', (req, res) => {
+//     console.log('req.body' + Object.values(req.body)[0], Object.values(req.body)[1])
+//     return res.sendStatus(200);
+// });
 // Not Found
 app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/'));

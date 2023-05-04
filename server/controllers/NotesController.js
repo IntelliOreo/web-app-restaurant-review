@@ -1,7 +1,7 @@
 const Note = require('../models/NoteModel');
 
 const createNote = async (req, res) => {
-  const { title, body, date } = req.body
+  const { title, body, date, userId } = req.body
 
    if ( !title ||!body || !date ){
      return res.status(400).json({
@@ -11,7 +11,7 @@ const createNote = async (req, res) => {
 
    try {
  // create a note
- const newNote = await Note.create({title,body,date})
+ const newNote = await Note.create({title,body,date, userId})
 //return create note
 return res.status(200).json ({
   note: newNote
