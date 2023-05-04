@@ -1,6 +1,6 @@
-import './ShowNotes.css'
+import '../ShowNotes/ShowNotes.css'
 import React, { useEffect, useState } from 'react'
-import CreateNew from './CreateNew'
+import CreateNew from '../CreateNew/CreateNew'
 import axios from 'axios'
 import NotesList from './myNotes'
 import { toast } from 'react-toastify'

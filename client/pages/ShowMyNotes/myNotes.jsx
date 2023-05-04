@@ -1,4 +1,4 @@
-import './ShowNotes.css'
+import '../ShowNotes/ShowNotes.css'
 import React from 'react'
 
 function NotesList({ note, deleteNote }) {

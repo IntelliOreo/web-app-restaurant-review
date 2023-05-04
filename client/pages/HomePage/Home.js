@@ -3,8 +3,8 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import Navbar from '../../components/Navbar/Navbar'
 import { ToastContainer, toast } from 'react-toastify'
 // import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
-// import  CreateNew from '../../components/CreateNew'
-// import ShowMyNotes from '../../components/showMyNotes';
+import ShowNotes from '../ShowNotes/ShowNotes';
+import ShowMyNotes from '../ShowMyNotes/showMyNotes';
 
 
 const Home = () => {
@@ -15,6 +15,8 @@ const Home = () => {
 
   return (
     <>
+      <ShowMyNotes/>
+      <ShowNotes/>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       
