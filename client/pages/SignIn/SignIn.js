@@ -1,13 +1,15 @@
-import React, { useRef, useState } from "react";
-import { Link, Outlet } from 'react-router-dom';
+import React, { useRef, useState, useContext } from "react";
+import { Link, useNavigate } from 'react-router-dom'; // Rename the import here
 import { FaGoogle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 import NekoLogo from '../../../public/images/web-app-logo.png';
 import axios  from 'axios'
+import AuthContext from './AuthContext'
 
-const SignIn = () => {
-  
+const SignIn = ({ onClose }) => {
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate(); // Rename the navigate function here
   const username = useRef(null);
   const [usernameError, setUsernameError] = useState('')
   const password = useRef(null);
@@ -16,8 +18,8 @@ const SignIn = () => {
   const handleClick = (e) => {
     e.preventDefault();
     let errors = false;
-    // Client Validation
 
+    // Client Validation
     if (username.current.value.trim() === '' || !username.current.value) {
       setUsernameError('Username cannot be empty')
       errors = true
@@ -28,23 +30,32 @@ const SignIn = () => {
       errors = true
     }
 
-    if (errors) return
-    // Send to Backend
+    if (errors) return;
 
-    axios.post('api/user/signIn', {
+    // Send to Backend
+    axios.post('/api/user/signIn', {
       username: username.current.value,
       password: password.current.value,
     })
     .then(function (response) {
       const userId = response.data.userId;
       localStorage.setItem('userId', userId);
-      console.log('catch user id' + JSON.stringify( userId ) + response);
+
+      // Update the isAuthenticated state to true
+      setIsAuthenticated(true);
+
+      // Close Modal
+      if (onClose) {
+        onClose();
+      }
+
+      // Redirect to ShowNotes page
+      navigate('/ShowMyNotes'); // Use navigate() here
+
     })
     .catch(function (error) {
       console.log(error);
     });
-    
-    
   }
   
   return (

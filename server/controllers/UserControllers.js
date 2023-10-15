@@ -1,6 +1,6 @@
 const User = require('../models/UserModel');
 const bcrypt = require('bcrypt');
-
+const { v4: uuidv4 } = require('uuid');
 
 /**
  * @description Sign Up user
@@ -84,6 +84,15 @@ const signIn = async (req, res) => {
       message: 'Invalid email address and/or password. Please try again.'
     })
   }
+
+// Set HttpOnly cookie
+const sessionId = uuidv4();
+res.cookie('session_id', sessionId, {
+  httpOnly: true,
+  secure: process.env.NODE_ENV !== 'development',  // Only send the cookie over HTTPS in production
+  maxAge: 7 * 24 * 60 * 60 * 1000 // 1-week expiration
+  // sameSite: 'strict' // Consider setting this for CSRF protection
+});
 
   req.session.regenerate(function (err) {
     if (err) next(err)

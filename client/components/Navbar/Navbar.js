@@ -47,14 +47,11 @@ const Navbar = ({ toggle,  }) => {
             <NavItem>
               <NavLinks to="/signUp">Sign Up</NavLinks>
             </NavItem>
-            <NavButtonContainer  onClick={() => console.log('clicked')}>            
+            <NavButtonContainer >            
               <SignInButton onClick={() => setIsOpen(true)}>Sign In</SignInButton>
-              <Modal
-                open={isOpen}
-                onClose={() => setIsOpen(false)}
-              >
-                <SignIn />
-              </Modal>                         
+              <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+              <SignIn onClose={() => setIsOpen(false)} />
+              </Modal>
             </NavButtonContainer>
           </NavMenu>
         </NavbarContainer>

@@ -15,11 +15,8 @@ const Home = () => {
 
   return (
     <>
-      <ShowMyNotes/>
-      <ShowNotes/>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
-      
       <ToastContainer />
     </>
   )

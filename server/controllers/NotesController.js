@@ -26,6 +26,7 @@ return res.status(200).json ({
 }
 
 const getAllNotes = async(req,res) => {
+  console.log('req',req)
   try {
     const notes = await Note.find().lean()
   return res.status(200).json({

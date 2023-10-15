@@ -12,7 +12,7 @@ function ShowNotes() {
   
     // Load notes on mount
   
-    const url = 'http://localhost:8080/api/note/show'
+    const url = 'http://localhost:8080/api/notes/show'
     useEffect(() => {
       axios
         .get(`${url}`)
